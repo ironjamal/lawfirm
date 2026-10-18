@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOUR & PARTNERS — Trusted Counsel. Strategic Solutions.</title>
+    <meta name="description" content="Nour & Partners Law Office — A premier law firm in New Cairo, Egypt offering strategic legal counsel across corporate, commercial, real estate, family, and litigation practice areas.">
+    <meta name="keywords" content="law firm, legal counsel, New Cairo, Egypt, corporate law, commercial law, litigation">
+    <meta property="og:title" content="NOUR & PARTNERS — Trusted Counsel. Strategic Solutions.">
+    <meta property="og:description" content="Premier law firm in New Cairo, Egypt offering strategic legal counsel across multiple practice areas.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #101B2D;
+            --ivory: #F6F3EE;
+            --charcoal: #252525;
+            --gold: #B69A68;
+            --gold-light: #c9b08a;
+            --soft-gray: #E8E5DF;
+            --white: #FFFFFF;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--sans);
+            color: var(--charcoal);
+            background: var(--ivory);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+        ul { list-style: none; }
+        button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(16, 27, 45, 0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(182, 154, 104, 0.15);
+            transition: all 0.4s ease;
+        }
+        .nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+        .nav-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 80px;
+        }
+        .nav-logo {
+            font-family: var(--serif); font-size: 1.4rem; font-weight: 600;
+            color: var(--ivory); letter-spacing: 2px; text-transform: uppercase;
+        }
+        .nav-logo span { color: var(--gold); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            font-size: 0.82rem; font-weight: 500; color: rgba(246,243,238,0.8);
+            letter-spacing: 0.8px; text-transform: uppercase; transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
+            background: var(--gold); transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            background: var(--gold); color: var(--navy); padding: 10px 24px;
+            font-size: 0.78rem; font-weight: 600; letter-spacing: 1px;
+            text-transform: uppercase; border-radius: 2px; transition: all 0.3s;
+        }
+        .nav-cta:hover { background: var(--gold-light); color: var(--navy); }
+        .nav-cta::after { display: none !important; }
+
+        .mobile-toggle {
+            display: none; flex-direction: column; gap: 5px; cursor: pointer;
+            padding: 8px; z-index: 1001;
+        }
+        .mobile-toggle span {
+            width: 24px; height: 2px; background: var(--ivory);
+            transition: all 0.3s ease; display: block;
+        }
+        .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+        .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .mobile-menu {
+            display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--navy); z-index: 999; flex-direction: column;
+            align-items: center; justify-content: center; gap: 28px;
+        }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a {
+            font-size: 1.1rem; color: var(--ivory); letter-spacing: 1px;
+            text-transform: uppercase; font-weight: 500;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative; min-height: 100vh; display: flex; align-items: center;
+            background: var(--navy); overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background:
+                linear-gradient(135deg, rgba(16,27,45,0.95) 0%, rgba(16,27,45,0.7) 50%, rgba(16,27,45,0.85) 100%),
+                radial-gradient(ellipse at 70% 50%, rgba(182,154,104,0.08) 0%, transparent 60%),
+                linear-gradient(180deg, #0d1520 0%, #1a2a42 50%, #0d1520 100%);
+        }
+        .hero-pattern {
+            position: absolute; inset: 0; opacity: 0.03;
+            background-image: repeating-linear-gradient(
+                0deg, transparent, transparent 60px,
+                rgba(182,154,104,0.5) 60px, rgba(182,154,104,0.5) 61px
+            ),
+            repeating-linear-gradient(
+                90deg, transparent, transparent 60px,
+                rgba(182,154,104,0.5) 60px, rgba(182,154,104,0.5) 61px
+            );
+        }
+        .hero-accent {
+            position: absolute; right: -100px; top: 50%; transform: translateY(-50%);
+            width: 500px; height: 500px; border-radius: 50%;
+            border: 1px solid rgba(182,154,104,0.08);
+        }
+        .hero-accent::before {
+            content: ''; position: absolute; inset: 40px; border-radius: 50%;
+            border: 1px solid rgba(182,154,104,0.05);
+        }
+        .hero-content { position: relative; z-index: 2; padding-top: 80px; }
+        .hero-label {
+            font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 24px; font-weight: 500;
+        }
+        .hero-title {
+            font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 5rem);
+            color: var(--ivory); line-height: 1.1; margin-bottom: 28px;
+            font-weight: 500; max-width: 700px;
+        }
+        .hero-title em { font-style: italic; color: var(--gold); }
+        .hero-subtitle {
+            font-size: 1.05rem; color: rgba(246,243,238,0.7); max-width: 520px;
+            line-height: 1.8; margin-bottom: 40px; font-weight: 300;
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--gold); color: var(--navy); padding: 16px 36px;
+            font-size: 0.82rem; font-weight: 600; letter-spacing: 1.2px;
+            text-transform: uppercase; border-radius: 2px; transition: all 0.3s;
+        }
+        .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            border: 1px solid rgba(182,154,104,0.4); color: var(--ivory);
+            padding: 16px 36px; font-size: 0.82rem; font-weight: 500;
+            letter-spacing: 1.2px; text-transform: uppercase; border-radius: 2px;
+            transition: all 0.3s;
+        }
+        .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+        .hero-stats {
+            display: flex; gap: 48px; margin-top: 64px; padding-top: 40px;
+            border-top: 1px solid rgba(182,154,104,0.15);
+        }
+        .hero-stat-num {
+            font-family: var(--serif); font-size: 2.2rem; color: var(--gold);
+            font-weight: 600; line-height: 1;
+        }
+        .hero-stat-label {
+            font-size: 0.75rem; color: rgba(246,243,238,0.5); margin-top: 6px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section { padding: 100px 0; }
+        .section-dark { background: var(--navy); color: var(--ivory); }
+        .section-alt { background: var(--soft-gray); }
+        .section-label {
+            font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 16px; font-weight: 600;
+        }
+        .section-title {
+            font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.2; margin-bottom: 20px; font-weight: 500;
+        }
+        .section-subtitle {
+            font-size: 1rem; color: #666; max-width: 600px; line-height: 1.8;
+            font-weight: 300;
+        }
+        .section-dark .section-subtitle { color: rgba(246,243,238,0.6); }
+        .section-header { margin-bottom: 60px; }
+        .section-header-row {
+            display: flex; justify-content: space-between; align-items: flex-end;
+            flex-wrap: wrap; gap: 24px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+            align-items: center;
+        }
+        .about-image {
+            position: relative; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden;
+            background: linear-gradient(135deg, #1a2a42 0%, #2a3a52 50%, #1a2a42 100%);
+        }
+        .about-image-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(16,27,45,0.4));
+        }
+        .about-image-pattern {
+            position: absolute; inset: 0; opacity: 0.1;
+            background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(182,154,104,0.3) 20px, rgba(182,154,104,0.3) 21px);
+        }
+        .about-image-text {
+            position: absolute; bottom: 32px; left: 32px; right: 32px;
+            font-family: var(--serif); font-size: 1.4rem; color: var(--ivory);
+            font-style: italic; opacity: 0.9;
+        }
+        .about-badge {
+            position: absolute; top: 24px; right: 24px;
+            background: var(--gold); color: var(--navy); padding: 12px 20px;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; border-radius: 2px;
+        }
+        .about-content p { margin-bottom: 20px; color: #555; line-height: 1.85; }
+        .about-values {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+            margin-top: 36px;
+        }
+        .about-value {
+            padding: 20px; border-left: 2px solid var(--gold);
+        }
+        .about-value h4 {
+            font-family: var(--serif); font-size: 1.1rem; margin-bottom: 6px;
+            color: var(--navy);
+        }
+        .about-value p { font-size: 0.85rem; color: #777; margin: 0; line-height: 1.6; }
+
+        /* ===== PRACTICE AREAS ===== */
+        .practice-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+        }
+        .practice-card {
+            background: var(--white); padding: 48px 36px; position: relative;
+            transition: all 0.4s ease; overflow: hidden; cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .practice-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--gold); transform: scaleX(0); transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+        .practice-card:hover::before { transform: scaleX(1); }
+        .practice-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+        .practice-icon {
+            width: 48px; height: 48px; margin-bottom: 24px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .practice-icon svg { width: 36px; height: 36px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+        .practice-card h3 {
+            font-family: var(--serif); font-size: 1.4rem; margin-bottom: 14px;
+            color: var(--navy); font-weight: 600;
+        }
+        .practice-card p { font-size: 0.9rem; color: #666; line-height: 1.75; margin-bottom: 20px; }
+        .practice-link {
+            font-size: 0.78rem; font-weight: 600; color: var(--gold);
+            text-transform: uppercase; letter-spacing: 1px;
+            display: inline-flex; align-items: center; gap: 6px;
+        }
+        .practice-link:hover { gap: 10px; }
+
+        /* ===== ATTORNEYS ===== */
+        .attorneys-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+        }
+        .attorney-card { text-align: center; }
+        .attorney-photo {
+            width: 100%; aspect-ratio: 3/4; border-radius: 4px; margin-bottom: 24px;
+            position: relative; overflow: hidden;
+            background: linear-gradient(135deg, #1a2a42, #2a3a52);
+        }
+        .attorney-photo-inner {
+            position: absolute; inset: 0; display: flex; align-items: center;
+            justify-content: center;
+        }
+        .attorney-initials {
+            font-family: var(--serif); font-size: 3.5rem; color: rgba(182,154,104,0.25);
+            font-weight: 600; letter-spacing: 4px;
+        }
+        .attorney-photo-overlay {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 24px;
+            background: linear-gradient(to top, rgba(16,27,45,0.9), transparent);
+        }
+        .attorney-photo-label {
+            font-size: 0.7rem; color: var(--gold); text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .attorney-card h3 {
+            font-family: var(--serif); font-size: 1.5rem; color: var(--navy);
+            margin-bottom: 4px; font-weight: 600;
+        }
+        .attorney-card .role {
+            font-size: 0.82rem; color: var(--gold); text-transform: uppercase;
+            letter-spacing: 1px; font-weight: 500; margin-bottom: 14px;
+        }
+        .attorney-card p { font-size: 0.88rem; color: #666; line-height: 1.7; }
+        .attorney-demo-note {
+            font-size: 0.72rem; color: #999; font-style: italic; margin-top: 8px;
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+        }
+        .why-item { text-align: center; padding: 32px 20px; }
+        .why-num {
+            font-family: var(--serif); font-size: 3rem; color: var(--gold);
+            font-weight: 600; line-height: 1; margin-bottom: 16px; opacity: 0.6;
+        }
+        .why-item h4 {
+            font-family: var(--serif); font-size: 1.2rem; color: var(--navy);
+            margin-bottom: 10px;
+        }
+        .why-item p { font-size: 0.85rem; color: #777; line-height: 1.7; }
+
+        /* ===== PROCESS ===== */
+        .process-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+            position: relative;
+        }
+        .process-grid::before {
+            content: ''; position: absolute; top: 40px; left: 12.5%; right: 12.5%;
+            height: 1px; background: rgba(182,154,104,0.3);
+        }
+        .process-step { text-align: center; padding: 0 20px; position: relative; }
+        .process-dot {
+            width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--gold);
+            background: var(--navy); margin: 30px auto 28px; position: relative; z-index: 1;
+        }
+        .process-dot::after {
+            content: ''; position: absolute; inset: 4px; border-radius: 50%;
+            background: var(--gold);
+        }
+        .process-step h4 {
+            font-family: var(--serif); font-size: 1.15rem; color: var(--ivory);
+            margin-bottom: 10px;
+        }
+        .process-step p { font-size: 0.85rem; color: rgba(246,243,238,0.6); line-height: 1.7; }
+        .process-num {
+            font-family: var(--serif); font-size: 0.9rem; color: var(--gold);
+            font-weight: 600; letter-spacing: 1px;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+        }
+        .testimonial-card {
+            background: var(--white); padding: 40px 32px; border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.05); position: relative;
+        }
+        .testimonial-card::before {
+            content: '"'; position: absolute; top: 16px; left: 28px;
+            font-family: var(--serif); font-size: 4rem; color: var(--gold);
+            opacity: 0.2; line-height: 1;
+        }
+        .testimonial-stars { margin-bottom: 16px; color: var(--gold); font-size: 0.9rem; }
+        .testimonial-card blockquote {
+            font-size: 0.95rem; color: #555; line-height: 1.8; margin-bottom: 24px;
+            font-style: italic;
+        }
+        .testimonial-author { font-weight: 600; color: var(--navy); font-size: 0.9rem; }
+        .testimonial-role { font-size: 0.8rem; color: #999; margin-top: 2px; }
+        .testimonial-demo {
+            font-size: 0.68rem; color: #bbb; margin-top: 12px;
+            padding-top: 12px; border-top: 1px solid #eee;
+        }
+
+        /* ===== INSIGHTS ===== */
+        .insights-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+        }
+        .insight-card {
+            background: var(--white); border-radius: 4px; overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05); transition: all 0.3s ease;
+        }
+        .insight-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+        .insight-image {
+            aspect-ratio: 16/10; position: relative; overflow: hidden;
+        }
+        .insight-image-bg {
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, #1a2a42, #2a3a52);
+        }
+        .insight-image-pattern {
+            position: absolute; inset: 0; opacity: 0.08;
+        }
+        .insight-category {
+            position: absolute; top: 16px; left: 16px;
+            background: var(--gold); color: var(--navy); padding: 4px 12px;
+            font-size: 0.68rem; font-weight: 700; letter-spacing: 1px;
+            text-transform: uppercase; border-radius: 2px;
+        }
+        .insight-body { padding: 28px; }
+        .insight-date { font-size: 0.75rem; color: #999; margin-bottom: 10px; }
+        .insight-card h3 {
+            font-family: var(--serif); font-size: 1.25rem; color: var(--navy);
+            margin-bottom: 12px; line-height: 1.4; font-weight: 600;
+        }
+        .insight-card p { font-size: 0.88rem; color: #666; line-height: 1.7; margin-bottom: 16px; }
+        .insight-link {
+            font-size: 0.78rem; font-weight: 600; color: var(--gold);
+            text-transform: uppercase; letter-spacing: 1px;
+            display: inline-flex; align-items: center; gap: 6px;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-list { max-width: 800px; margin: 0 auto; }
+        .faq-item {
+            border-bottom: 1px solid rgba(0,0,0,0.08); padding: 0;
+        }
+        .faq-question {
+            width: 100%; text-align: left; padding: 24px 0;
+            font-family: var(--serif); font-size: 1.15rem; color: var(--navy);
+            display: flex; justify-content: space-between; align-items: center;
+            font-weight: 500; transition: color 0.3s;
+        }
+        .faq-question:hover { color: var(--gold); }
+        .faq-icon {
+            width: 24px; height: 24px; position: relative; flex-shrink: 0;
+            margin-left: 16px;
+        }
+        .faq-icon::before, .faq-icon::after {
+            content: ''; position: absolute; background: var(--gold);
+            transition: transform 0.3s ease;
+        }
+        .faq-icon::before { width: 14px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .faq-icon::after { width: 1.5px; height: 14px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        .faq-item.active .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-answer-inner {
+            padding-bottom: 24px; font-size: 0.92rem; color: #666; line-height: 1.8;
+        }
+        .faq-item.active .faq-answer { max-height: 300px; }
+
+        /* ===== CONTACT ===== */
+        .contact-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+        }
+        .contact-info-item {
+            display: flex; gap: 16px; margin-bottom: 32px; align-items: flex-start;
+        }
+        .contact-info-icon {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: rgba(182,154,104,0.1); display: flex;
+            align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .contact-info-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+        .contact-info-item h4 {
+            font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px;
+            color: var(--gold); margin-bottom: 4px; font-weight: 600;
+        }
+        .contact-info-item p { font-size: 0.92rem; color: #555; line-height: 1.6; }
+        .contact-form { display: flex; flex-direction: column; gap: 20px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label {
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;
+            color: #888; margin-bottom: 8px; font-weight: 600;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 14px 16px; border: 1px solid #ddd; border-radius: 2px;
+            font-family: var(--sans); font-size: 0.92rem; color: var(--charcoal);
+            transition: border-color 0.3s; background: var(--white);
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--gold);
+        }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-submit {
+            background: var(--navy); color: var(--ivory); padding: 16px 40px;
+            font-size: 0.82rem; font-weight: 600; letter-spacing: 1.2px;
+            text-transform: uppercase; border-radius: 2px; transition: all 0.3s;
+            align-self: flex-start; border: none; cursor: pointer;
+        }
+        .form-submit:hover { background: var(--gold); color: var(--navy); }
+        .form-note { font-size: 0.78rem; color: #999; margin-top: 4px; }
+        .form-success {
+            display: none; padding: 20px; background: rgba(182,154,104,0.1);
+            border: 1px solid var(--gold); border-radius: 4px; text-align: center;
+        }
+        .form-success h4 { color: var(--navy); font-family: var(--serif); font-size: 1.2rem; margin-bottom: 8px; }
+        .form-success p { font-size: 0.9rem; color: #666; }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner {
+            background: var(--navy); padding: 80px 0; text-align: center;
+            position: relative; overflow: hidden;
+        }
+        .cta-banner::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at center, rgba(182,154,104,0.06) 0%, transparent 70%);
+        }
+        .cta-banner h2 {
+            font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            color: var(--ivory); margin-bottom: 16px; position: relative;
+        }
+        .cta-banner p {
+            color: rgba(246,243,238,0.6); margin-bottom: 32px; font-size: 1rem;
+            position: relative;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0a1220; color: rgba(246,243,238,0.6); padding: 80px 0 0;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+            padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer-brand .nav-logo { margin-bottom: 20px; display: inline-block; }
+        .footer-brand p { font-size: 0.88rem; line-height: 1.8; max-width: 300px; }
+        .footer h4 {
+            font-family: var(--serif); font-size: 1.1rem; color: var(--ivory);
+            margin-bottom: 20px; font-weight: 500;
+        }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul li a {
+            font-size: 0.85rem; color: rgba(246,243,238,0.5);
+            transition: color 0.3s;
+        }
+        .footer ul li a:hover { color: var(--gold); }
+        .footer-bottom {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 24px 0; flex-wrap: wrap; gap: 16px;
+        }
+        .footer-bottom p { font-size: 0.78rem; }
+        .footer-legal { display: flex; gap: 24px; }
+        .footer-legal a { font-size: 0.78rem; color: rgba(246,243,238,0.4); }
+        .footer-legal a:hover { color: var(--gold); }
+        .footer-disclaimer {
+            padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.72rem; color: rgba(246,243,238,0.3); line-height: 1.7;
+        }
+
+        /* ===== PAGES (Privacy, Terms) ===== */
+        .page-overlay {
+            display: none; position: fixed; inset: 0; z-index: 2000;
+            background: var(--ivory); overflow-y: auto;
+        }
+        .page-overlay.active { display: block; }
+        .page-header {
+            background: var(--navy); padding: 120px 0 60px; text-align: center;
+        }
+        .page-header h1 {
+            font-family: var(--serif); font-size: 2.5rem; color: var(--ivory);
+        }
+        .page-content { padding: 60px 0; max-width: 800px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+        .page-content h2 {
+            font-family: var(--serif); font-size: 1.5rem; color: var(--navy);
+            margin: 32px 0 12px;
+        }
+        .page-content p { margin-bottom: 16px; color: #555; line-height: 1.8; }
+        .page-close {
+            position: fixed; top: 24px; right: 24px; z-index: 2001;
+            width: 44px; height: 44px; background: var(--navy); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; border: none;
+        }
+        .page-close svg { width: 18px; height: 18px; stroke: var(--ivory); fill: none; stroke-width: 2; }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-up {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .practice-grid { grid-template-columns: repeat(2, 1fr); }
+            .attorneys-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+            .process-grid::before { display: none; }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .insights-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-stats { gap: 32px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: flex; }
+            .hero-title { font-size: 2.4rem; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .practice-grid { grid-template-columns: 1fr; }
+            .attorneys-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .insights-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .section { padding: 64px 0; }
+            .about-values { grid-template-columns: 1fr; }
+            .section-header-row { flex-direction: column; align-items: flex-start; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons { flex-direction: column; }
+            .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">NOUR <span>&</span> PARTNERS</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#practice">Practice Areas</a>
+                <a href="#team">Our Team</a>
+                <a href="#insights">Insights</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact" class="nav-cta">Book a Consultation</a>
+            </div>
+            <div class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" onclick="closeMobile()">About</a>
+        <a href="#practice" onclick="closeMobile()">Practice Areas</a>
+        <a href="#team" onclick="closeMobile()">Our Team</a>
+        <a href="#insights" onclick="closeMobile()">Insights</a>
+        <a href="#faq" onclick="closeMobile()">FAQ</a>
+        <a href="#contact" onclick="closeMobile()">Contact</a>
+        <a href="#contact" class="nav-cta" onclick="closeMobile()">Book a Consultation</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-accent"></div>
+        <div class="container hero-content">
+            <p class="hero-label">Nour & Partners Law Office — New Cairo, Egypt</p>
+            <h1 class="hero-title">Trusted Counsel.<br><em>Strategic Solutions.</em></h1>
+            <p class="hero-subtitle">We provide sophisticated legal counsel to individuals and businesses across Egypt, combining deep local expertise with international standards of practice.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Book a Consultation →</a>
+                <a href="#practice" class="btn-secondary">Explore Our Practice Areas</a>
+            </div>
+            <div class="hero-stats">
+                <div>
+                    <div class="hero-stat-num">15+</div>
+                    <div class="hero-stat-label">Years of Practice</div>
+                </div>
+                <div>
+                    <div class="hero-stat-num">6</div>
+                    <div class="hero-stat-label">Practice Areas</div>
+                </div>
+                <div>
+                    <div class="hero-stat-num">2</div>
+                    <div class="hero-stat-label">Languages Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image fade-up">
+                    <div class="about-image-pattern"></div>
+                    <div class="about-image-overlay"></div>
+                    <div class="about-badge">Est. 2009</div>
+                    <p class="about-image-text">"Excellence in every brief, integrity in every matter."</p>
+                </div>
+                <div class="about-content fade-up">
+                    <p class="section-label">About the Firm</p>
+                    <h2 class="section-title">A Legacy of Principled Legal Practice</h2>
+                    <p>Nour & Partners was founded on a clear conviction: that exceptional legal counsel requires both rigorous analytical thinking and genuine commitment to each client's objectives. Based in New Cairo, we serve a diverse clientele ranging from emerging entrepreneurs to established corporations and high-net-worth individuals.</p>
+                    <p>Our approach is deliberately measured. We take the time to understand the full context of every matter — commercial, personal, or regulatory — before crafting a strategy. We believe that the best legal outcomes are built on thorough preparation, transparent communication, and unwavering ethical standards.</p>
+                    <p>We practice in Arabic and English, reflecting the bilingual nature of Egypt's legal and business environment.</p>
+                    <div class="about-values">
+                        <div class="about-value">
+                            <h4>Integrity</h4>
+                            <p>Every action guided by ethical principles and professional responsibility.</p>
+                        </div>
+                        <div class="about-value">
+                            <h4>Precision</h4>
+                            <p>Meticulous attention to detail in every document and argument.</p>
+                        </div>
+                        <div class="about-value">
+                            <h4>Responsiveness</h4>
+                            <p>Timely communication and accessible counsel when you need it.</p>
+                        </div>
+                        <div class="about-value">
+                            <h4>Strategy</h4>
+                            <p>Forward-thinking approaches that anticipate challenges and opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRACTICE AREAS -->
+    <section class="section section-alt" id="practice">
+        <div class="container">
+            <div class="section-header fade-up">
+                <p class="section-label">What We Do</p>
+                <div class="section-header-row">
+                    <div>
+                        <h2 class="section-title">Our Practice Areas</h2>
+                        <p class="section-subtitle">Comprehensive legal services tailored to the complexities of modern business and personal matters in Egypt.</p>
+                    </div>
+                    <a href="#contact" class="btn-primary">Discuss Your Matter →</a>
+                </div>
+            </div>
+            <div class="practice-grid">
+                <div class="practice-card fade-up">
+                    <div class="practice-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 21h18M3 7v14M21 7v14M6 7V4h12v3M9 21v-4h6v4M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/></svg>
+                    </div>
+                    <h3>Corporate & Commercial</h3>
+                    <p>Company formation, governance, mergers and acquisitions, joint ventures, and ongoing commercial advisory for businesses operating in Egypt's dynamic market.</p>
+                    <span class="practice-link">Learn More →</span>
+                </div>
+                <div class="practice-card fade-up">
+                    <div class="practice-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3>Contracts & Transactions</h3>
+                    <p>Drafting, review, and negotiation of commercial agreements, supply contracts, distribution deals, and complex transactional documentation.</p>
+                    <span class="practice-link">Learn More →</span>
+                </div>
+                <div class="practice-card fade-up">
+                    <div class="practice-icon">
+                        <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    </div>
+                    <h3>Real Estate & Construction</h3>
+                    <p>Property acquisitions, development agreements, lease negotiations, title verification, and construction dispute resolution across Egypt's growing property sector.</p>
+                    <span class="practice-link">Learn More →</span>
+                </div>
+                <div class="practice-card fade-up">
+                    <div class="practice-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Family & Personal Status</h3>
+                    <p>Sensitive handling of marriage, divorce, custody, inheritance, and personal status matters with discretion and cultural awareness.</p>
+                    <span class="practice-link">Learn More →</span>
+                </div>
+                <div class="practice-card fade-up">
+                    <div class="practice-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3>Dispute Resolution & Litigation</h3>
+                    <p>Representation before Egyptian courts, arbitration proceedings, mediation services, and strategic dispute management for complex commercial conflicts.</p>
+                    <span class="practice-link">Learn More →</span>
+                </div>
+                <div class="practice-card fade-up">
+                    <div class="practice-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Regulatory & Compliance</h3>
+                    <p>Navigating Egypt's regulatory landscape including licensing, data protection, labor law compliance, and government liaison for businesses and institutions.</p>
+                    <span class="practice-link">Learn More →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section" id="team">
+        <div class="container">
+            <div class="section-header fade-up" style="text-align:center;">
+                <p class="section-label">Our Team</p>
+                <h2 class="section-title">Meet Our Attorneys</h2>
+                <p class="section-subtitle" style="margin:0 auto;">Experienced legal professionals dedicated to delivering exceptional counsel. <em>All profiles shown are fictional demonstrations.</em></p>
+            </div>
+            <div class="attorneys-grid">
+                <div class="attorney-card fade-up">
+                    <div class="attorney-photo">
+                        <div class="attorney-photo-inner"><span class="attorney-initials">AN</span></div>
+                        <div class="attorney-photo-overlay">
+                            <span class="attorney-photo-label">Founding Partner</span>
+                        </div>
+                    </div>
+                    <h3>Ahmed Nour</h3>
+                    <p class="role">Founding & Managing Partner</p>
+                    <p>Specializes in corporate law and cross-border transactions. Brings a strategic, client-focused approach to complex commercial matters. Demo profile — illustrative credentials only.</p>
+                    <p class="attorney-demo-note">⚠ Fictional demo profile for illustration purposes.</p>
+                </div>
+                <div class="attorney-card fade-up">
+                    <div class="attorney-photo" style="background: linear-gradient(135deg, #2a1a42, #3a2a52);">
+                        <div class="attorney-photo-inner"><span class="attorney-initials">LM</span></div>
+                        <div class="attorney-photo-overlay">
+                            <span class="attorney-photo-label">Senior Partner</span>
+                        </div>
+                    </div>
+                    <h3>Layla Mansour</h3>
+                    <p class="role">Senior Partner — Litigation</p>
+                    <p>Leads the firm's dispute resolution practice with extensive experience in commercial litigation and arbitration. Known for thorough preparation and persuasive advocacy. Demo profile.</p>
+                    <p class="attorney-demo-note">⚠ Fictional demo profile for illustration purposes.</p>
+                </div>
+                <div class="attorney-card fade-up">
+                    <div class="attorney-photo" style="background: linear-gradient(135deg, #1a3242, #2a4252);">
+                        <div class="attorney-photo-inner"><span class="attorney-initials">OK</span></div>
+                        <div class="attorney-photo-overlay">
+                            <span class="attorney-photo-label">Associate Partner</span>
+                        </div>
+                    </div>
+                    <h3>Omar Khalil</h3>
+                    <p class="role">Associate Partner — Real Estate</p>
+                    <p>Focuses on real estate transactions, construction law, and property development advisory. Combines technical knowledge with practical deal-making experience. Demo profile.</p>
+                    <p class="attorney-demo-note">⚠ Fictional demo profile for illustration purposes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header fade-up" style="text-align:center;">
+                <p class="section-label">Why Nour & Partners</p>
+                <h2 class="section-title">What Sets Us Apart</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-item fade-up">
+                    <div class="why-num">01</div>
+                    <h4>Client-Centered Approach</h4>
+                    <p>Every strategy is built around your specific objectives, timeline, and risk tolerance — never a one-size-fits-all template.</p>
+                </div>
+                <div class="why-item fade-up">
+                    <div class="why-num">02</div>
+                    <h4>Local Expertise, Global Standards</h4>
+                    <p>Deep knowledge of Egyptian law combined with international best practices in documentation, ethics, and client service.</p>
+                </div>
+                <div class="why-item fade-up">
+                    <div class="why-num">03</div>
+                    <h4>Bilingual Capability</h4>
+                    <p>Full professional service in both Arabic and English, ensuring clear communication across all legal contexts.</p>
+                </div>
+                <div class="why-item fade-up">
+                    <div class="why-num">04</div>
+                    <h4>Transparent Communication</h4>
+                    <p>Regular updates, clear fee structures, and honest assessments — because informed clients make better decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header fade-up" style="text-align:center;">
+                <p class="section-label">How We Work</p>
+                <h2 class="section-title" style="color:var(--ivory);">Our Consultation Process</h2>
+                <p class="section-subtitle" style="margin:0 auto;">A structured, transparent approach from first contact to resolution.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step fade-up">
+                    <p class="process-num">Step 01</p>
+                    <div class="process-dot"></div>
+                    <h4>Initial Inquiry</h4>
+                    <p>Contact us by phone, email, or through our consultation form. We'll acknowledge your inquiry within one business day.</p>
+                </div>
+                <div class="process-step fade-up">
+                    <p class="process-num">Step 02</p>
+                    <div class="process-dot"></div>
+                    <h4>Consultation</h4>
+                    <p>A confidential meeting to understand your situation, assess the legal landscape, and discuss potential approaches.</p>
+                </div>
+                <div class="process-step fade-up">
+                    <p class="process-num">Step 03</p>
+                    <div class="process-dot"></div>
+                    <h4>Strategy & Engagement</h4>
+                    <p>We present a clear strategy, timeline, and fee proposal. Upon agreement, we begin focused work on your matter.</p>
+                </div>
+                <div class="process-step fade-up">
+                    <p class="process-num">Step 04</p>
+                    <div class="process-dot"></div>
+                    <h4>Execution & Resolution</h4>
+                    <p>Diligent execution with regular progress updates until your matter reaches a successful conclusion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-up" style="text-align:center;">
+                <p class="section-label">Client Perspectives</p>
+                <h2 class="section-title">What Clients Say</h2>
+                <p class="section-subtitle" style="margin:0 auto;"><em>All testimonials below are fictional and created for demonstration purposes only. They do not represent real client experiences.</em></p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-up">
+                    <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                    <blockquote>"The team at Nour & Partners guided us through a complex corporate restructuring with remarkable clarity and professionalism. Their strategic thinking made a significant difference."</blockquote>
+                    <p class="testimonial-author">Demo Client A</p>
+                    <p class="testimonial-role">Illustrative — Corporate Sector</p>
+                    <p class="testimonial-demo">⚠ This is a fictional testimonial for demonstration purposes only.</p>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                    <blockquote>"Responsive, thorough, and genuinely invested in understanding our business. They handled our real estate acquisition seamlessly from start to finish."</blockquote>
+                    <p class="testimonial-author">Demo Client B</p>
+                    <p class="testimonial-role">Illustrative — Real Estate Development</p>
+                    <p class="testimonial-demo">⚠ This is a fictional testimonial for demonstration purposes only.</p>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+                    <blockquote>"During a sensitive family matter, the attorneys showed both legal expertise and genuine empathy. Their bilingual capability was essential for our situation."</blockquote>
+                    <p class="testimonial-author">Demo Client C</p>
+                    <p class="testimonial-role">Illustrative — Personal Legal Matter</p>
+                    <p class="testimonial-demo">⚠ This is a fictional testimonial for demonstration purposes only.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSIGHTS -->
+    <section class="section section-alt" id="insights">
+        <div class="container">
+            <div class="section-header fade-up">
+                <p class="section-label">Legal Insights</p>
+                <div class="section-header-row">
+                    <div>
+                        <h2 class="section-title">Recent Articles & Updates</h2>
+                        <p class="section-subtitle">Perspectives on legal developments affecting businesses and individuals in Egypt.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="insights-grid">
+                <div class="insight-card fade-up">
+                    <div class="insight-image">
+                        <div class="insight-image-bg" style="background: linear-gradient(135deg, #1a2a42, #2a3a52);"></div>
+                        <div class="insight-image-pattern" style="background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(182,154,104,0.1) 10px, rgba(182,154,104,0.1) 11px);"></div>
+                        <span class="insight-category">Corporate</span>
+                    </div>
+                    <div class="insight-body">
+                        <p class="insight-date">December 15, 2024</p>
+                        <h3>Understanding Egypt's New Investment Law: What Foreign Investors Need to Know</h3>
+                        <p>A practical overview of recent legislative changes affecting foreign direct investment, including new incentive structures and regulatory streamlined procedures.</p>
+                        <span class="insight-link">Read Article →</span>
+                    </div>
+                </div>
+                <div class="insight-card fade-up">
+                    <div class="insight-image">
+                        <div class="insight-image-bg" style="background: linear-gradient(135deg, #2a1a32, #3a2a42);"></div>
+                        <div class="insight-image-pattern" style="background: radial-gradient(circle at 30% 50%, rgba(182,154,104,0.08) 0%, transparent 50%);"></div>
+                        <span class="insight-category">Real Estate</span>
+                    </div>
+                    <div class="insight-body">
+                        <p class="insight-date">November 28, 2024</p>
+                        <h3>Navigating Property Title Verification in New Cairo: A Comprehensive Guide</h3>
+                        <p>Key considerations for buyers and developers conducting due diligence on property titles, including common pitfalls and best practices for verification.</p>
+                        <span class="insight-link">Read Article →</span>
+                    </div>
+                </div>
+                <div class="insight-card fade-up">
+                    <div class="insight-image">
+                        <div class="insight-image-bg" style="background: linear-gradient(135deg, #1a3232, #2a4242);"></div>
+                        <div class="insight-image-pattern" style="background: repeating-linear-gradient(0deg, transparent, transparent 15px, rgba(182,154,104,0.06) 15px, rgba(182,154,104,0.06) 16px);"></div>
+                        <span class="insight-category">Compliance</span>
+                    </div>
+                    <div class="insight-body">
+                        <p class="insight-date">October 10, 2024</p>
+                        <h3>Data Protection Compliance in Egypt: Preparing for Enhanced Regulatory Scrutiny</h3>
+                        <p>With evolving data protection frameworks, businesses must adapt their compliance programs. We outline the key requirements and practical steps for readiness.</p>
+                        <span class="insight-link">Read Article →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-header fade-up" style="text-align:center;">
+                <p class="section-label">Common Questions</p>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        How do I schedule a consultation?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">You can schedule a consultation by calling our office at +20 100 000 0000, emailing contact@nourpartners.example, or completing the consultation request form on this page. We typically respond within one business day to arrange a convenient time for your initial meeting.</div>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        What are your fees and billing structure?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">We offer transparent fee arrangements tailored to each matter. Depending on the nature of your case, we may work on an hourly basis, a fixed fee, or a retainer arrangement. During your initial consultation, we will discuss the most appropriate fee structure and provide a clear written proposal before any work begins.</div>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        Do you handle matters outside of Cairo?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes. While our office is based in New Cairo, we represent clients in matters across Egypt. We regularly handle cases in other governorates and can coordinate with local counsel when specialized regional knowledge is required.</div>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        In which languages do you provide service?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Our team provides full professional legal services in both Arabic and English. All attorneys in the firm are bilingual, and we can prepare documents, conduct meetings, and correspond in either language according to your preference.</div>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        What should I bring to my first consultation?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Please bring any documents relevant to your matter — contracts, correspondence, court notices, or identification documents. If you're unsure what to bring, our team will guide you when confirming your appointment. The initial consultation is confidential, and all information shared is protected by attorney-client privilege.</div>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        What are your office hours?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Our office is open Sunday through Thursday, from 9:00 AM to 5:00 PM. For urgent matters outside of regular hours, existing clients may reach their assigned attorney directly. We are closed on Fridays and Saturdays.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="container" style="position:relative;">
+            <h2>Ready to Discuss Your Legal Matter?</h2>
+            <p>Schedule a confidential consultation with our team. We're here to help.</p>
+            <a href="#contact" class="btn-primary">Book a Consultation →</a>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header fade-up">
+                <p class="section-label">Get in Touch</p>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Reach out to schedule a consultation or inquire about our services. We respond to all inquiries within one business day.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="fade-up">
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <h4>Office Address</h4>
+                            <p>Business District, New Cairo<br>Cairo, Egypt</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+20 100 000 0000</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@nourpartners.example</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Sunday – Thursday<br>9:00 AM – 5:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M3.5 9h17M3.5 15h17"/><path d="M12 2v20"/></svg>
+                        </div>
+                        <div>
+                            <h4>Languages</h4>
+                            <p>Arabic & English</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-up">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required placeholder="Your first name">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required placeholder="Your last name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+20 xxx xxx xxxx">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="practiceArea">Practice Area of Interest</label>
+                            <select id="practiceArea" name="practiceArea">
+                                <option value="">Select a practice area</option>
+                                <option value="corporate">Corporate & Commercial</option>
+                                <option value="contracts">Contracts & Transactions</option>
+                                <option value="realestate">Real Estate & Construction</option>
+                                <option value="family">Family & Personal Status</option>
+                                <option value="litigation">Dispute Resolution & Litigation</option>
+                                <option value="regulatory">Regulatory & Compliance</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Brief Description of Your Matter *</label>
+                            <textarea id="message" name="message" required placeholder="Please provide a brief overview of your legal matter or question..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Submit Consultation Request</button>
+                        <p class="form-note">By submitting this form, you agree to our privacy policy. This form does not establish an attorney-client relationship. Information submitted is not protected by privilege until a formal engagement is confirmed.</p>
+                    </form>
+                    <div class="form-success" id="formSuccess">
+                        <h4>Thank You for Your Inquiry</h4>
+                        <p>Your consultation request has been received. Please note that this is a demonstration website — no actual message has been sent. In a production environment, our team would respond within one business day.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#hero" class="nav-logo">NOUR <span>&</span> PARTNERS</a>
+                    <p>Trusted counsel and strategic solutions for individuals and businesses in Egypt. Based in New Cairo, serving clients nationwide.</p>
+                </div>
+                <div>
+                    <h4>Practice Areas</h4>
+                    <ul>
+                        <li><a href="#practice">Corporate & Commercial</a></li>
+                        <li><a href="#practice">Contracts & Transactions</a></li>
+                        <li><a href="#practice">Real Estate & Construction</a></li>
+                        <li><a href="#practice">Family & Personal Status</a></li>
+                        <li><a href="#practice">Dispute Resolution</a></li>
+                        <li><a href="#practice">Regulatory & Compliance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>The Firm</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#insights">Legal Insights</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+201000000000">+20 100 000 0000</a></li>
+                        <li><a href="mailto:contact@nourpartners.example">contact@nourpartners.example</a></li>
+                        <li>Business District, New Cairo</li>
+                        <li>Cairo, Egypt</li>
+                        <li>Sun–Thu, 9 AM – 5 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Nour & Partners Law Office. All rights reserved. This is a demonstration website.</p>
+                <div class="footer-legal">
+                    <a href="#" onclick="openPage('privacy'); return false;">Privacy Policy</a>
+                    <a href="#" onclick="openPage('terms'); return false;">Terms of Use</a>
+                    <a href="#" onclick="openPage('disclaimer'); return false;">Legal Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <strong>Important Disclaimer:</strong> This website is a demonstration project and does not represent a real law firm. "Nour & Partners" is a fictional entity created for illustrative purposes. No attorney-client relationship is formed by visiting this site. The information presented herein is for demonstration only and should not be construed as legal advice. All attorney profiles, client testimonials, case results, and credentials shown are entirely fictional. In a real engagement, all credentials, bar registrations, and representations would need to be verified independently.
+            </div>
+        </div>
+    </footer>
+
+    <!-- PRIVACY PAGE -->
+    <div class="page-overlay" id="privacyPage">
+        <button class="page-close" onclick="closePage('privacy')" aria-label="Close">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="page-header"><h1>Privacy Policy</h1></div>
+        <div class="page-content">
+            <p><em>Last updated: December 2024. This is a demonstration privacy policy for a fictional law firm.</em></p>
+            <h2>1. Information We Collect</h2>
+            <p>When you contact us through our website or consultation form, we may collect your name, email address, phone number, and details about your legal matter. We collect this information solely for the purpose of responding to your inquiry and providing legal services.</p>
+            <h2>2. How We Use Your Information</h2>
+            <p>Your information is used to: respond to consultation requests, schedule meetings, provide legal services, communicate about your matters, and comply with professional obligations. We do not sell, trade, or share your personal information with third parties except as required by law or as necessary to provide legal services.</p>
+            <h2>3. Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet is completely secure.</p>
+            <h2>4. Attorney-Client Privilege</h2>
+            <p>Submitting information through this website does not create an attorney-client relationship. Privilege attaches only after a formal engagement agreement is executed. Please do not send confidential information until such an agreement is in place.</p>
+            <h2>5. Contact</h2>
+            <p>For privacy-related inquiries, please contact us at contact@nourpartners.example or call +20 100 000 0000.</p>
+        </div>
+    </div>
+
+    <!-- TERMS PAGE -->
+    <div class="page-overlay" id="termsPage">
+        <button class="page-close" onclick="closePage('terms')" aria-label="Close">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="page-header"><h1>Terms of Use</h1></div>
+        <div class="page-content">
+            <p><em>Last updated: December 2024. This is a demonstration terms of use page for a fictional law firm.</em></p>
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using this website, you accept and agree to be bound by these terms. If you do not agree to these terms, you should not use this website.</p>
+            <h2>2. No Legal Advice</h2>
+            <p>The content on this website is provided for general informational purposes only and does not constitute legal advice. No attorney-client relationship is formed by your use of this website. You should not act upon any information on this website without seeking professional counsel from a licensed attorney.</p>
+            <h2>3. Intellectual Property</h2>
+            <p>All content on this website, including text, graphics, logos, and design elements, is the property of Nour & Partners (fictional) or its content suppliers and is protected by applicable intellectual property laws.</p>
+            <h2>4. Limitation of Liability</h2>
+            <p>This website is provided "as is" without warranties of any kind. We shall not be liable for any damages arising from the use of or inability to use this website or its content.</p>
+            <h2>5. Governing Law</h2>
+            <p>These terms shall be governed by and construed in accordance with the laws of the Arab Republic of Egypt.</p>
+        </div>
+    </div>
+
+    <!-- DISCLAIMER PAGE -->
+    <div class="page-overlay" id="disclaimerPage">
+        <button class="page-close" onclick="closePage('disclaimer')" aria-label="Close">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="page-header"><h1>Legal Disclaimer</h1></div>
+        <div class="page-content">
+            <p><em>This is a demonstration disclaimer for a fictional law firm website.</em></p>
+            <h2>Demonstration Website Notice</h2>
+            <p>This website is a demonstration project created for illustrative and portfolio purposes. "Nour & Partners Law Office" is a fictional entity. It does not represent a real law firm, and no legal services are offered through this website.</p>
+            <h2>No Attorney-Client Relationship</h2>
+            <p>Visiting this website, submitting a form, or communicating through any channel on this site does not create an attorney-client relationship. Any information submitted is not protected by attorney-client privilege.</p>
+            <h2>Fictional Content</h2>
+            <p>All attorney profiles, client testimonials, case results, awards, credentials, and business details presented on this website are entirely fictional and created for demonstration purposes. They should not be interpreted as real qualifications, results, or endorsements.</p>
+            <h2>Not Legal Advice</h2>
+            <p>Any legal information presented on this website is for demonstration purposes only and does not constitute legal advice. For actual legal matters, please consult a licensed attorney in your jurisdiction.</p>
+        </div>
+    </div>
+
+    <script>
+        // ===== NAVIGATION =====
+        const navbar = document.getElementById('navbar');
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        function closeMobile() {
+            mobileToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // ===== FAQ ACCORDION =====
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+                btn.setAttribute('aria-expanded', !isActive);
+            });
+        });
+
+        // ===== CONTACT FORM =====
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Validate
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!firstName || !lastName || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            if (!email.includes('@') || !email.includes('.')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Show success (demo only - no actual submission)
+            contactForm.style.display = 'none';
+            formSuccess.style.display = 'block';
+        });
+
+        // ===== PAGE OVERLAYS =====
+        function openPage(page) {
+            document.getElementById(page + 'Page').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePage(page) {
+            document.getElementById(page + 'Page').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close pages with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.page-overlay.active').forEach(p => {
+                    p.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const position = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: position, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "Nour & Partners Law Office",
+        "description": "A demonstration law firm website. This is a fictional entity for illustrative purposes.",
+        "url": "https://nourpartners.example",
+        "telephone": "+201000000000",
+        "email": "contact@nourpartners.example",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Business District",
+            "addressLocality": "New Cairo",
+            "addressRegion": "Cairo",
+            "addressCountry": "EG"
+        },
+        "openingHours": "Su-Th 09:00-17:00",
+        "priceRange": "$$",
+        "areaServed": "Egypt",
+        "knowsLanguage": ["Arabic", "English"]
+    }
+    </script>
+</body>
+</html>
